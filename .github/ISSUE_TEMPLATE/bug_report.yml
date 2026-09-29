@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for reporting a problem. Do not include secrets, personal data, or security vulnerabilities.
+  - type: input
+    id: repository_area
+    attributes:
+      label: Repository area
+      description: Which application, package, route, or module is affected?
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest safe sequence that reproduces the issue.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Branch, commit, or version
+      placeholder: main @ commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Add sanitized logs, screenshots, or test output.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, personal data, production data, and other sensitive information.
+          required: true
+        - label: This is not a security vulnerability requiring private disclosure.
+          required: true
